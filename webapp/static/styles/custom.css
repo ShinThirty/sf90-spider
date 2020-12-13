@@ -39,6 +39,11 @@
   background-color: lightgreen;
 }
 
+.button_custom {
+  background-color: green;
+  color: white;
+}
+
 .text_custom_green {
   color: green;
 }
