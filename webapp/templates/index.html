@@ -11,14 +11,14 @@
         <div class="row">
             {% for location in places %}
             <div class="col-md-4">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="{{ url_for('static', filename='pics/' + places[location][1] + '.jpeg') }}" onerror="this.src='/static/pics/notfound.png'" data-holder-rendered="true">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="{{ url_for('static', filename='pics/' + location[2] + '.jpeg') }}" onerror="this.src='/static/pics/notfound.png'" data-holder-rendered="true">
                 <div class="card-body">
                     <p class="card-text">
-                        {{ location }} is considered "{{ places[location][0] }}"
+                        {{ location[0] }} is considered "{{ location[1] }}"
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn button_custom">View</button>
+                            <a href="{{ url_for('locations.location_view', location='#'.join(location)) }}" class="btn button_custom" role="button">View</a>
                             <button type="button" class="btn button_custom">Rate</button>
                         </div>
                     </div>
