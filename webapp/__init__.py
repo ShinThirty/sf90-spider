@@ -1,7 +1,9 @@
 import os
-from flask import Flask
+from flask import Flask, request, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap(app)
 
 # required to launch the flask app
 # TODO what should be the right secret?

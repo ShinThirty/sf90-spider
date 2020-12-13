@@ -1,4 +1,6 @@
 from flask import render_template,request,Blueprint
+from webapp.core.forms import AddSpotForm
+from webapp.core.forms import *
 
 core = Blueprint('core',__name__)
 
@@ -15,6 +17,12 @@ def index():
     return render_template('index.html', places=places)
 
 
-@core.route('/add')
+@core.route('/add', methods=['GET', 'POST'])
 def add():
-    return render_template('add.html')
+    form = AddSpotForm()
+    if form.validate_on_submit():
+        print("submitted!\naddress:{}\nlength:{}\ndesc:{}".format(\
+            form.address.data,\
+            get_lenth_range(form.length_selection.data),\
+            form.desc.data))
+    return render_template('add.html', form=form)
