@@ -7,7 +7,11 @@ def index():
     '''
     This is the home page view
     '''
-    return render_template('index.html')
+    places = {}
+    places["locationA"] = "A great place for hiking!!"
+    places["locationB"] = "A somewhat good place for hiking!"
+    places["locationC"] = "A not-so good place for hiking"
+    return render_template('index.html', places=places)
 
 
 @core.route('/add')
