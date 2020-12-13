@@ -25,11 +25,15 @@
 
       <div class="navbar navbar-dark navbar-custom box-shadow">
         <div class="container d-flex justify-content-between">
-          <a href="{{ url_for('core.index') }}" class="navbar-brand d-flex align-items-center">Home</a>
-          <a href="{{ url_for('core.add') }}" class="navbar-brand d-flex align-items-center">Add Spot</a>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="row">
+            <a href="{{ url_for('core.index') }}" class="navbar-brand d-flex align-items-center">Home</a>
+            <a href="{{ url_for('core.add') }}" class="navbar-brand d-flex align-items-center">Add Spot</a>
+          </div>
+          <div>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
