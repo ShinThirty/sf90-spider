@@ -10,10 +10,10 @@ def index():
     This is the home page view
     '''
     places = {}
-    places["locationA"] = "A great place for hiking!!"
-    places["locationB"] = "A somewhat good place for hiking!"
-    places["locationC"] = "A not-so good place for hiking"
-    places["locationD"] = "A bad good place for hiking.."
+    places["locationA"] = ["A great place for hiking!!", "image1"]
+    places["locationB"] = ["A somewhat good place for hiking!", "image2"]
+    places["locationC"] = ["A not-so good place for hiking", "image3"]
+    places["locationD"] = ["A not-so good place for hiking", "image4"]
     return render_template('index.html', places=places)
 
 
