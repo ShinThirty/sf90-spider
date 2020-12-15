@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">The Hiking Spot Collection</h1>
+            <p class="lead text-muted">This is a list of places to check out for the hike lovers</p>
+        </div>
+    </section>
+    <div class="py-5 bg-light">
+        <div class="row">
+            {% for location in places %}
+            <div class="col-md-4">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="{{ url_for('static', filename='pics/' + location[2] + '.jpeg') }}" onerror="this.src='/static/pics/notfound.png'" data-holder-rendered="true">
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ location[0] }} is considered "{{ location[1] }}"
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{{ url_for('locations.location_view', location='#'.join(location)) }}" class="btn button_custom" role="button">View</a>
+                            <button type="button" class="btn button_custom">Rate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}

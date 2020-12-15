@@ -1,2 +1,5 @@
 # ignore local virtual env
 venv
+
+# ignore pycache files
+__pycache__
