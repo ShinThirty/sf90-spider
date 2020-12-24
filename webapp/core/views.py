@@ -18,7 +18,6 @@ def index():
     places.append(["locationB", "A somewhat good place for hiking!", "image2"])
     places.append(["locationC", "A not-so good place for hiking", "image3"])
     places.append(["locationD", "A not-so good place for hiking", "image4"])
-
     # get all up to current highest location_id
     print("location-1", location_id)
     for i in range(location_id):
@@ -30,7 +29,6 @@ def index():
 
 @core.route('/add', methods=['GET', 'POST'])
 def add():
-    global location_id
     form = AddSpotForm()
     if form.validate_on_submit():
         print("submitted!\naddress:{}\nlength:{}\ndesc:{}".format(\
