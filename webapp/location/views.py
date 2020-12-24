@@ -2,7 +2,7 @@ from flask import render_template,request,Blueprint
 
 locations = Blueprint('locations', __name__)
 
-@locations.route('/<location>')
+@locations.route('/location/<location>')
 def location_view(location):
     print("received:", location, type(location))
     comp = location.split('#')
