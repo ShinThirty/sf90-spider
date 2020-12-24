@@ -29,6 +29,7 @@ def index():
 
 @core.route('/add', methods=['GET', 'POST'])
 def add():
+    global location_id
     form = AddSpotForm()
     if form.validate_on_submit():
         print("submitted!\naddress:{}\nlength:{}\ndesc:{}".format(\
