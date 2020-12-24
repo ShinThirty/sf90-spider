@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
+import redis
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -9,6 +10,8 @@ Bootstrap(app)
 # TODO what should be the right secret?
 app.config['SECRET_KEY'] = 'mysecret'
 basedir = os.path.abspath(os.path.dirname(__file__))
+redis_store = redis.Redis(host='redis')
+location_id = 0
 
 from webapp.core.views import core
 from webapp.location.views import locations
