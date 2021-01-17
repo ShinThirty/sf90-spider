@@ -7,7 +7,7 @@
             <p class="lead text-muted">This is to share the hiking spot you discovered</p>
         </div>
     </section>
-    <form class="form-group" method="POST">
+    <form class="form-group" method="POST" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <div class="form-group mb-3 col-md-12">
             {{ form.address.label(class="form-control-label") }}
@@ -36,6 +36,18 @@
             <!-- <label for="descInput">General Description</label> -->
             <!-- <textarea class="form-control" id="desc" rows="3"></textarea> -->
         </div>
+
+        <div class="form-group mb-3 col-md-12">
+            {{ form.image.label(class="form-control-label") }}
+            {{ form.image(class="custom-file-label custom-file-input", id="customFile") }}
+            <label class="custom-file-label mb-3 col-md-12" for="customFile">Choose file</label>
+
+            <!-- <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="customFile" name="filename">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+              </div> -->
+        </div>
+
         <hr class="mb-4">
         <div class="col-md-2 mb-3">
             {{ form.submit(class="btn button_custom") }}

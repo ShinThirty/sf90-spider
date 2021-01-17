@@ -18,4 +18,5 @@ class AddSpotForm(FlaskForm):
     address = StringField('Address', validators=[DataRequired()])
     desc = TextAreaField('Description')
     length_selection = SelectField('Length in miles', choices=LENS)
+    image = FileField('Thumbnail Image')
     submit = SubmitField('Submit')
