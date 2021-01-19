@@ -13,7 +13,7 @@ LEN_MAP = {
     '6': 'not sure'
 }
 
-def get_lenth_range(choice):
+def get_length_range(choice):
     if choice in LEN_MAP:
         return LEN_MAP[choice]
     raise ValueError("Unknown choice:" + choice)

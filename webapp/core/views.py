@@ -44,13 +44,13 @@ def add():
     if form.validate_on_submit():
         print("submitted!\naddress:{}\nlength:{}\ndesc:{}".format(\
             form.address.data,\
-            get_lenth_range(form.length_selection.data),\
+            get_length_range(form.length_selection.data),\
             form.desc.data))
         new_id = "location" + str(location_id)
 
         new_entry = {}
         new_entry['address'] = form.address.data
-        new_entry['length'] = get_lenth_range(form.length_selection.data)
+        new_entry['length'] = get_length_range(form.length_selection.data)
         new_entry['desc'] = form.desc.data
         
         if form.image.data is not None:
