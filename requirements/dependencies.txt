@@ -2,8 +2,6 @@ Flask
 Jinja2
 WTForms
 Werkzeug
-black
-flake8
 flask_bootstrap
 flask_uploads
 flask_wtf
