@@ -3,3 +3,6 @@ venv
 
 # ignore pycache files
 __pycache__
+
+# ignore IDE files
+**/.vscode

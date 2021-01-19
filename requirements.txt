@@ -1,11 +1,11 @@
-Flask==1.0.2
-Jinja2==2.10
-WTForms==2.1
+Flask
+Jinja2
+WTForms
+Werkzeug
+black
+flake8
 flask_bootstrap
-Werkzeug==0.16.0
 flask_uploads
 flask_wtf
-mysql-connector-python
-redis
 google-cloud-firestore
 google-cloud-storage
