@@ -44,25 +44,25 @@ def add():
     if form.validate_on_submit():
         print("submitted!\naddress:{}\nlength:{}\ndesc:{}".format(\
             form.address.data,\
-            get_lenth_range(form.length_selection.data),\
+            get_length_range(form.length_selection.data),\
             form.desc.data))
         new_id = "location" + str(location_id)
 
         new_entry = {}
         new_entry['address'] = form.address.data
-        new_entry['length'] = get_lenth_range(form.length_selection.data)
+        new_entry['length'] = get_length_range(form.length_selection.data)
         new_entry['desc'] = form.desc.data
         
-        filename = "image-{}.jpeg".format(str(uuid.uuid4()))
-        #filename = secure_filename(form.image.data.filename)
-        form.image.data.save(filename)
-        blob = image_bucket.blob(filename)
-        blob.upload_from_filename(filename)
-
-        new_entry['image'] = filename
-        os.remove(filename)
+        if form.image.data is not None:
+            filename = "image-{}.jpeg".format(str(uuid.uuid4()))
+            form.image.data.save(filename)
+            blob = image_bucket.blob(filename)
+            blob.upload_from_filename(filename)
+            new_entry['image'] = filename
+            os.remove(filename)
 
         spots_ref = firestore_storedb.collection('spots_data').document(form.address.data)
         spots_ref.set(new_entry)
         location_id += 1
+        return render_template('add_confirm.html')
     return render_template('add.html', form=form)

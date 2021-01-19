@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="{{ url_for('static', filename='pics/thankyou.jpg') }}" onerror="this.src='/static/pics/notfound.png'" data-holder-rendered="true">
+            <h1 class="jumbotron-heading">Thank you for upload!</h1>
+        </div>
+    </section>
+</main>
+{% endblock %}
