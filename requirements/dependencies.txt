@@ -1,0 +1,9 @@
+Flask
+Jinja2
+WTForms
+Werkzeug
+flask_bootstrap
+flask_uploads
+flask_wtf
+google-cloud-firestore
+google-cloud-storage
